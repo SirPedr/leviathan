@@ -28,4 +28,5 @@ export const mainTheme = createTheme({
   colors: {
     yellow,
   },
+  defaultRadius: 0,
 });
