@@ -1,5 +1,5 @@
 export const readSheetFile = (sheet: File) =>
-  new Promise((resolve) => {
+  new Promise<any>((resolve) => {
     const fileReader = new FileReader();
 
     fileReader.readAsText(sheet);
