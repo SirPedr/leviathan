@@ -1,0 +1,22 @@
+.sheetUpload {
+  height: 100vh;
+  padding: 0 24px;
+}
+
+.sheetUpload-form {
+  width: 100%;
+}
+
+.sheetUpload-inputLabel {
+  margin-bottom: 4px;
+}
+
+.sheetUpload-submitButton {
+  margin-top: 12px;
+}
+
+@media screen and (min-width: $mantine-breakpoint-sm) {
+  .sheetUpload-form {
+    width: 500px;
+  }
+}

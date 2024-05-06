@@ -1,9 +1,13 @@
 import {
+  Button,
   CSSVariablesResolver,
   DEFAULT_THEME,
+  FileInput,
   MantineColorsTuple,
   createTheme,
 } from "@mantine/core";
+import buttonOverrides from "./overrides/button.module.css";
+import fileInputOverrides from "./overrides/fileInput.module.css";
 
 const yellow: MantineColorsTuple = [
   "#fff9e0",
@@ -25,8 +29,22 @@ export const mainThemeResolver: CSSVariablesResolver = () => ({
 });
 
 export const mainTheme = createTheme({
+  fontFamily: "Manrope, sans-serif",
   colors: {
     yellow,
   },
   defaultRadius: 0,
+  components: {
+    Button: Button.extend({
+      classNames: {
+        root: buttonOverrides.button,
+      },
+    }),
+    FileInput: FileInput.extend({
+      classNames: {
+        label: fileInputOverrides.fileInputLabel,
+        input: fileInputOverrides.fileInputInput,
+      },
+    }),
+  },
 });

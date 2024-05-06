@@ -1,0 +1,14 @@
+.fileInput-label {
+  margin-bottom: 4px;
+}
+
+.fileInput-input {
+  background-color: var(--mantine-color-dark-7);
+  border: none;
+}
+
+@media screen and (min-width: $mantine-breakpoint-sm) {
+  .fileInput-label {
+    font-size: var(--mantine-font-size-md);
+  }
+}

@@ -1,0 +1,17 @@
+.button {
+  --button-hover: var(--mantine-color-dark-8);
+
+  background-color: var(--mantine-color-dark-7);
+  color: var(--mantine-color-yellow-5);
+  box-shadow: 4px 4px 0px 0px var(--mantine-color-yellow-5);
+
+  :hover {
+    color: var(--mantine-color-yellow-5);
+  }
+}
+
+@media screen and (min-width: $mantine-breakpoint-sm) {
+  .button {
+    font-size: var(--mantine-font-size-md);
+  }
+}

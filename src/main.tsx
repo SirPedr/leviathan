@@ -3,7 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import { MantineProvider } from "@mantine/core";
-import { mainTheme, mainThemeResolver } from "./theme.ts";
+import { mainTheme, mainThemeResolver } from "./theme/index.ts";
 
 import { RouterProvider, createRouter } from "@tanstack/react-router";
 import { routeTree } from "./routeTree.gen";
