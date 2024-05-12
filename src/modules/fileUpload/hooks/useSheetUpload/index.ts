@@ -1,3 +1,4 @@
+import { useNavigate } from "@tanstack/react-router";
 import {
   MAX_SIZE_IN_BYTES,
   MINIMUM_DND_SUPPORTED_VERSION,
@@ -7,7 +8,15 @@ import { isSystemSupported } from "../../helpers/isSystemSupported/isSystemSuppo
 import { isSystemVersionSupported } from "../../helpers/isSystemVersionSupported";
 import { readSheetFile } from "../../helpers/readSheetFile";
 
+declare module "@tanstack/react-router" {
+  interface HistoryState {
+    sheet: unknown;
+  }
+}
+
 export const useSheetUpload = () => {
+  const navigate = useNavigate();
+
   const validateBasicSheetUpload = (sheet: File | null) => {
     if (!sheet) {
       return "Please upload a character sheet";
@@ -43,5 +52,15 @@ export const useSheetUpload = () => {
     }
   };
 
-  return { validateBasicSheetUpload, validateSheetContent };
+  const submitCharacterSheet = async (sheet: File) => {
+    const sheetContent = await readSheetFile(sheet);
+
+    navigate({ to: "/character", state: { sheet: sheetContent } });
+  };
+
+  return {
+    validateBasicSheetUpload,
+    validateSheetContent,
+    submitCharacterSheet,
+  };
 };

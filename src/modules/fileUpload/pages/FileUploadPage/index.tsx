@@ -9,12 +9,16 @@ type FormValues = {
 };
 
 export const FileUploadPage = () => {
-  const { validateBasicSheetUpload, validateSheetContent } = useSheetUpload();
+  const {
+    validateBasicSheetUpload,
+    validateSheetContent,
+    submitCharacterSheet,
+  } = useSheetUpload();
   const form = useForm<FormValues>({
     defaultValues: {
       sheet: null,
     },
-    onSubmit: console.log,
+    onSubmit: ({ value }) => submitCharacterSheet(value.sheet!),
   });
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
