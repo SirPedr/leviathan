@@ -1,0 +1,27 @@
+.characterPage {
+  padding: 16px;
+}
+
+.characterPage-header {
+  padding-bottom: 16px;
+}
+
+.characterPage-title {
+  font-size: var(--mantine-font-size-lg);
+  text-align: center;
+}
+
+.characterPage-name {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.characterPage-classText {
+  text-align: center;
+  color: var(--mantine-color-yellow-4);
+}
+
+.characterPage-basicTraits {
+  margin-top: 24px;
+}

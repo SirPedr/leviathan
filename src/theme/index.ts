@@ -24,7 +24,10 @@ const yellow: MantineColorsTuple = [
 
 export const mainThemeResolver: CSSVariablesResolver = () => ({
   variables: {},
-  dark: { "--mantine-color-body": DEFAULT_THEME.colors.dark[9] },
+  dark: {
+    "--mantine-color-body": DEFAULT_THEME.colors.dark[9],
+    "--mantine-color-text": DEFAULT_THEME.white,
+  },
   light: {},
 });
 
@@ -33,6 +36,8 @@ export const mainTheme = createTheme({
   colors: {
     yellow,
   },
+  primaryColor: "yellow",
+  primaryShade: 5,
   defaultRadius: 0,
   components: {
     Button: Button.extend({
