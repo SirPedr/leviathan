@@ -7,12 +7,16 @@ import { formatChosenClassesList } from "../../helpers/formatChosenClassesList";
 import { formatMulticlassLevels } from "../../helpers/formatMulticlassLevels";
 import { TraitLabel } from "../../../../components/TraitLabel";
 import { IconHeart, IconShield } from "@tabler/icons-react";
+import { useSkills } from "../../../skills/hooks/useSkills";
 
 export const CharacterPage = () => {
   const routerState = useRouterState();
-  const basicInformation = useBasicCharacterInformation(
-    routerState.location.state.sheet as CharacterSheet
-  );
+  const sheet = routerState.location.state.sheet as CharacterSheet;
+
+  const basicInformation = useBasicCharacterInformation(sheet);
+  const skills = useSkills(sheet);
+
+  console.log(skills);
 
   return (
     <main className={classes.characterPage}>
