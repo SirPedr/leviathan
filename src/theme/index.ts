@@ -32,6 +32,7 @@ export const mainThemeResolver: CSSVariablesResolver = () => ({
 });
 
 export const mainTheme = createTheme({
+  autoContrast: true,
   fontFamily: "Manrope, sans-serif",
   colors: {
     yellow,

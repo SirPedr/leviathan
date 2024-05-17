@@ -25,3 +25,15 @@
 .characterPage-basicTraits {
   margin-top: 24px;
 }
+
+.characterPage-tabs {
+  margin-top: 24px;
+}
+
+.characterPage-tabList {
+  margin-bottom: 12px;
+}
+
+.characterPage-tab[data-active] {
+  color: var(--mantine-primary-color-filled);
+}

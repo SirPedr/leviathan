@@ -1,13 +1,14 @@
 import { useRouterState } from "@tanstack/react-router";
 import { useBasicCharacterInformation } from "../../../basicInformation/hooks/useBasicCharacterInformation/useBasicCharacterInformation";
 import { CharacterSheet } from "../../../../types/characterSheet";
-import { Divider, Flex, Text, Title } from "@mantine/core";
+import { Divider, Flex, Tabs, Text, Title } from "@mantine/core";
 import classes from "./index.module.css";
 import { formatChosenClassesList } from "../../helpers/formatChosenClassesList";
 import { formatMulticlassLevels } from "../../helpers/formatMulticlassLevels";
 import { TraitLabel } from "../../../../components/TraitLabel";
 import { IconHeart, IconShield } from "@tabler/icons-react";
 import { useSkills } from "../../../skills/hooks/useSkills";
+import { SkillsPage } from "../../../skills/pages/SkillsPage.tsx";
 
 export const CharacterPage = () => {
   const routerState = useRouterState();
@@ -15,8 +16,6 @@ export const CharacterPage = () => {
 
   const basicInformation = useBasicCharacterInformation(sheet);
   const skills = useSkills(sheet);
-
-  console.log(skills);
 
   return (
     <main className={classes.characterPage}>
@@ -62,6 +61,23 @@ export const CharacterPage = () => {
           />
         </Flex>
       </section>
+
+      <Tabs
+        defaultValue="skills"
+        classNames={{
+          root: classes.characterPageTabs,
+          tab: classes.characterPageTab,
+          list: classes.characterPageTabList,
+        }}
+      >
+        <Tabs.List>
+          <Tabs.Tab value="skills">Skills</Tabs.Tab>
+        </Tabs.List>
+
+        <Tabs.Panel value="skills">
+          <SkillsPage skills={skills} />
+        </Tabs.Panel>
+      </Tabs>
     </main>
   );
 };

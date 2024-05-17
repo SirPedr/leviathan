@@ -1,0 +1,18 @@
+.skill {
+  margin-bottom: 12px;
+}
+
+.skill:last-child {
+  margin-bottom: 0;
+}
+
+.skill-wrapper {
+  width: 100%;
+}
+
+.skill-label {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
