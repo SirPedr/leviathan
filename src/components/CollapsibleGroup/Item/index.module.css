@@ -1,0 +1,18 @@
+.collapsibleGroupItem-wrapper,
+.collapsibleGroupItem-label {
+  width: 100%;
+}
+
+.collapsibleGroupItem-trigger {
+  box-shadow: none;
+  background: none;
+  color: white;
+  font-weight: 400;
+  font-size: var(--mantine-font-size-md);
+  height: 42px;
+}
+
+.collapsibleGroupItem-content {
+  padding: 0 18px 18px;
+  font-size: var(--mantine-font-size-md);
+}

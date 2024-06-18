@@ -1,0 +1,9 @@
+.collapsibleGroup {
+  background: var(--mantine-color-dark-8);
+}
+
+.collapsibleGroup-trigger {
+  box-shadow: none;
+  width: 100%;
+  text-align: left;
+}

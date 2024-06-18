@@ -1,5 +1,11 @@
-import { Flex, Stack, Text, ThemeIcon } from "@mantine/core";
-import React from "react";
+import {
+  Flex,
+  Stack,
+  Text,
+  ThemeIcon,
+  createPolymorphicComponent,
+} from "@mantine/core";
+import React, { forwardRef } from "react";
 import classes from "./index.module.css";
 
 interface Props {
@@ -8,16 +14,24 @@ interface Props {
   description: string | number;
 }
 
-export const TraitLabel = ({ icon, title, description }: Props) => (
-  <Flex align="center">
-    {icon && (
-      <ThemeIcon variant="filled" color="dark.6" className={classes.traitIcon}>
-        {icon}
-      </ThemeIcon>
-    )}
-    <Stack gap={0}>
-      <Text size="sm">{title}</Text>
-      <Text c="dark.1">{description}</Text>
-    </Stack>
-  </Flex>
+export const TraitLabel = createPolymorphicComponent<"div", Props>(
+  forwardRef<HTMLDivElement, Props>(
+    ({ icon, title, description, ...otherProps }) => (
+      <Flex align="center" {...otherProps}>
+        {icon && (
+          <ThemeIcon
+            variant="filled"
+            color="dark.6"
+            className={classes.traitIcon}
+          >
+            {icon}
+          </ThemeIcon>
+        )}
+        <Stack gap={0}>
+          <Text size="sm">{title}</Text>
+          <Text c="dark.1">{description}</Text>
+        </Stack>
+      </Flex>
+    )
+  )
 );

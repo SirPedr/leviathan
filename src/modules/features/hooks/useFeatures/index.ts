@@ -5,6 +5,7 @@ import { adaptFeature } from "../../helpers/adaptFeature";
 import { groupFeatures } from "../../helpers/groupFeatures";
 import { isItemAFeature } from "../../helpers/isItemAFeature";
 import { CharacterFeatureGroup } from "../../types";
+import { sortAlphabetically } from "../../../../helpers/sortAlphabetically";
 
 export const useFeatures = (
   character: CharacterSheet
@@ -15,7 +16,8 @@ export const useFeatures = (
     () =>
       character.items
         .filter(isItemAFeature)
-        .map((feat) => adaptFeature(feat, totalLevel)),
+        .map((feat) => adaptFeature(feat, totalLevel))
+        .sort((first, second) => sortAlphabetically(first.name, second.name)),
     [totalLevel, character]
   );
 
