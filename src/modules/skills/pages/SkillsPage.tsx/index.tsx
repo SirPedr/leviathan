@@ -27,7 +27,7 @@ export const SkillsPage = ({ skills }: Props) => (
         const Icon = PROFICIENCY_ICONS[skillData.proficiency];
 
         return (
-          <List.Item>
+          <List.Item key={skillName}>
             <TraitLabel
               title={formatSkillName(skillName)}
               description={formatSkillModifier(skillData.modifier)}

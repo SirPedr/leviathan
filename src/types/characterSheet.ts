@@ -1,6 +1,6 @@
 import { CharacterAbilities } from "./abilities";
 import { HPAttribute } from "./attributes";
-import { ClassItem } from "./items";
+import { ClassItem, FeatItem } from "./items";
 import { SheetSkills } from "./skills";
 
 export type CharacterSheet = {
@@ -12,10 +12,5 @@ export type CharacterSheet = {
       hp: HPAttribute;
     };
   };
-  items: Array<
-    {
-      _id: string;
-      name: string;
-    } & ClassItem
-  >;
+  items: Array<ClassItem | FeatItem>;
 };

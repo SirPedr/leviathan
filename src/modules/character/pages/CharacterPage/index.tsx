@@ -9,6 +9,7 @@ import { TraitLabel } from "../../../../components/TraitLabel";
 import { IconHeart, IconShield } from "@tabler/icons-react";
 import { useSkills } from "../../../skills/hooks/useSkills";
 import { SkillsPage } from "../../../skills/pages/SkillsPage.tsx";
+import { FeaturesPage } from "../../../features/pages/FeaturesPage/index.tsx";
 
 export const CharacterPage = () => {
   const routerState = useRouterState();
@@ -72,10 +73,14 @@ export const CharacterPage = () => {
       >
         <Tabs.List>
           <Tabs.Tab value="skills">Skills</Tabs.Tab>
+          <Tabs.Tab value="features">Features</Tabs.Tab>
         </Tabs.List>
 
         <Tabs.Panel value="skills">
           <SkillsPage skills={skills} />
+        </Tabs.Panel>
+        <Tabs.Panel value="features">
+          <FeaturesPage character={sheet} />
         </Tabs.Panel>
       </Tabs>
     </main>

@@ -1,0 +1,13 @@
+import { FeatItem } from "../../../../types/items";
+
+const specialCostTypes = ["special", "none"];
+
+export const parseFeatureCost = (
+  cost: FeatItem["system"]["activation"]
+): string | null => {
+  if (!cost.type || specialCostTypes.includes(cost.type)) {
+    return null;
+  }
+
+  return `${cost.cost} ${cost.type === "bonus" ? "bonus action" : cost.type}`;
+};
