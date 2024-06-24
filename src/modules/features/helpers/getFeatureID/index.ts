@@ -1,4 +1,4 @@
 import slugify from "slugify";
 
 export const getFeatureID = (featureName: string) =>
-  slugify(featureName, { lower: true });
+  slugify(featureName, { lower: true, replacement: "_" });

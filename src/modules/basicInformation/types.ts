@@ -13,4 +13,5 @@ export type CharacterBasicInfo = {
     name: string;
     level: number;
   }>;
+  modifiers: Record<string, number>;
 };
