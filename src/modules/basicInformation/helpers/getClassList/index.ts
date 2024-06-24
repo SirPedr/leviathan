@@ -1,6 +1,6 @@
-import { CharacterSheet } from "../../../../types/characterSheet";
+import { RawSheet } from "../../../../types/rawSheet";
 
-export const getClassList = (sheet: CharacterSheet) =>
+export const getClassList = (sheet: RawSheet) =>
   sheet.items
     .filter((item) => item.type === "class")
     .map((chosenClass) => ({

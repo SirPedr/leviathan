@@ -1,14 +1,14 @@
 import { calculateAbilityModifier } from "../../../../helpers/calculateAbilityModifier";
-import { CharacterAbilities } from "../../../../types/abilities";
-import { SheetSkills, SkillsIDs } from "../../../../types/skills";
+import { RawAbilities } from "../../../../types/rawAbilities";
+import { RawSkills, SkillsIDs } from "../../../../types/rawSkills";
 import { SKILL_NAMES } from "../../consts/skillNames.consts";
 import { CharacterSkills } from "../../types";
 import { getProficiencyLevel } from "../getProficiencyLevel";
 
 export const parseSkills = (
   proficiencyBonus: number,
-  skills: SheetSkills,
-  abilities: CharacterAbilities
+  skills: RawSkills,
+  abilities: RawAbilities
 ): CharacterSkills =>
   Object.entries(skills).reduce((parsedSkills, skill) => {
     const [skillID, skillData] = skill;

@@ -1,4 +1,4 @@
-import { SkillsIDs } from "../../../types/skills";
+import { SkillsIDs } from "../../../types/rawSkills";
 import { SkillNames } from "../types";
 
 export const SKILL_NAMES: Record<SkillsIDs, SkillNames> = {

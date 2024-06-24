@@ -1,4 +1,4 @@
-import { AbilitiesIDs } from "./abilities";
+import { AbilitiesIDs } from "./rawAbilities";
 
 export type SkillsIDs =
   | "acr"
@@ -34,4 +34,4 @@ type SkillData = {
   };
 };
 
-export type SheetSkills = Record<SkillsIDs, SkillData>;
+export type RawSkills = Record<SkillsIDs, SkillData>;

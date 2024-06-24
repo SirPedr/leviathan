@@ -9,7 +9,7 @@ export const FEAT_TYPE_TO_GROUP_NAME: Record<string, string> = {
 };
 
 export const GROUP_FRIENDLY_NAMES: Record<string, string> = {
-  raceFeature: "Race Features",
+  raceFeature: "Racial Features",
   backgroundFeatures: "Background Features",
   classFeatures: "Class Features",
   otherFeatures: "Other Features",

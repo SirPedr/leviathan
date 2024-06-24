@@ -1,4 +1,5 @@
 export type CharacterFeatures = {
+  id: string;
   name: string;
   type: string;
   description: string;

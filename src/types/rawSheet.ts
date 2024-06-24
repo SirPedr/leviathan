@@ -1,13 +1,13 @@
-import { CharacterAbilities } from "./abilities";
+import { RawAbilities } from "./rawAbilities";
 import { HPAttribute } from "./attributes";
 import { ClassItem, FeatItem } from "./items";
-import { SheetSkills } from "./skills";
+import { RawSkills } from "./rawSkills";
 
-export type CharacterSheet = {
+export type RawSheet = {
   name: string;
   system: {
-    abilities: CharacterAbilities;
-    skills: SheetSkills;
+    abilities: RawAbilities;
+    skills: RawSkills;
     attributes: {
       hp: HPAttribute;
     };

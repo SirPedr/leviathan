@@ -9,4 +9,4 @@ type AbilityData = {
   };
 };
 
-export type CharacterAbilities = Record<AbilitiesIDs, AbilityData>;
+export type RawAbilities = Record<AbilitiesIDs, AbilityData>;

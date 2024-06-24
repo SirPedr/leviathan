@@ -4,6 +4,7 @@ import React, { PropsWithChildren } from "react";
 import classes from "./index.module.css";
 import { clsx } from "clsx";
 import { CollapsibleGroupItem } from "./Item";
+import { IconChevronDown, IconChevronRight } from "@tabler/icons-react";
 type Props = PropsWithChildren<{
   name: React.ReactNode;
   className?: string;
@@ -19,6 +20,7 @@ export const CollapsibleGroup = ({ name, children, className }: Props) => {
         className={classes.collapsibleGroupTrigger}
         justify="flex-start"
       >
+        {opened ? <IconChevronDown /> : <IconChevronRight />}
         {name}
       </Button>
 
