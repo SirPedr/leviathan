@@ -9,5 +9,5 @@ export const parseFeatureCost = (
     return null;
   }
 
-  return `${cost.cost} ${cost.type === "bonus" ? "bonus action" : cost.type}`;
+  return `${cost.cost ?? 1} ${cost.type === "bonus" ? "bonus action" : cost.type}`;
 };
