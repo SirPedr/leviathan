@@ -1,8 +1,9 @@
-import { Divider, Flex, Tabs, Text, Title } from "@mantine/core";
+import { Divider, Flex, List, Tabs, Text, Title } from "@mantine/core";
 import { IconHeart, IconShield } from "@tabler/icons-react";
 import { useRouterState } from "@tanstack/react-router";
 import { TraitLabel } from "../../../../components/TraitLabel";
 import { RawSheet } from "../../../../types/rawSheet.ts";
+import { AbilityModifier } from "../../../basicInformation/components/AbilityModifier/index.tsx";
 import { CharacterBasicInformationContext } from "../../../basicInformation/contexts/characterBasicInformationContext/index.ts";
 import { useBasicCharacterInformation } from "../../../basicInformation/hooks/useBasicCharacterInformation/useBasicCharacterInformation";
 import { FeaturesPage } from "../../../features/pages/FeaturesPage/index.tsx";
@@ -42,6 +43,20 @@ export const CharacterPage = () => {
               ({formatMulticlassLevels(basicInformation.classes)})
             </Text>
           )}
+
+          <Divider my="md" />
+
+          <Flex component={List} justify="space-between" listStyleType="none">
+            {Object.entries(basicInformation.modifiers).map(
+              ([abilityName, abilityModifier]) => (
+                <AbilityModifier
+                  key={abilityName}
+                  name={abilityName}
+                  value={abilityModifier}
+                />
+              )
+            )}
+          </Flex>
 
           <Divider my="md" />
 
