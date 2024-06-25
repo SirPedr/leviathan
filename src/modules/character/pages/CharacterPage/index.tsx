@@ -1,15 +1,11 @@
-import { Divider, Flex, List, Tabs, Text, Title } from "@mantine/core";
-import { IconHeart, IconShield } from "@tabler/icons-react";
+import { Tabs, Title } from "@mantine/core";
 import { useRouterState } from "@tanstack/react-router";
-import { TraitLabel } from "../../../../components/TraitLabel";
 import { RawSheet } from "../../../../types/rawSheet.ts";
-import { AbilityModifier } from "../../../basicInformation/components/AbilityModifier/index.tsx";
 import { CharacterBasicInformationContext } from "../../../basicInformation/contexts/characterBasicInformationContext/index.ts";
 import { useBasicCharacterInformation } from "../../../basicInformation/hooks/useBasicCharacterInformation/useBasicCharacterInformation";
+import { BasicInformationPage } from "../../../basicInformation/pages/BasicInformationPage/index.tsx";
 import { FeaturesPage } from "../../../features/pages/FeaturesPage/index.tsx";
 import { SkillsPage } from "../../../skills/pages/SkillsPage.tsx";
-import { formatChosenClassesList } from "../../helpers/formatChosenClassesList";
-import { formatMulticlassLevels } from "../../helpers/formatMulticlassLevels";
 import classes from "./index.module.css";
 
 export const CharacterPage = () => {
@@ -26,56 +22,7 @@ export const CharacterPage = () => {
           </Title>
         </header>
 
-        <section>
-          <Title order={2} className={classes.characterPageName}>
-            {basicInformation.name}
-          </Title>
-
-          <Text className={classes.characterPageClassText}>
-            Level {basicInformation.totalLevel}{" "}
-            {formatChosenClassesList(
-              basicInformation.classes.map((chosenClass) => chosenClass.name)
-            )}
-          </Text>
-
-          {basicInformation.classes.length > 1 && (
-            <Text className={classes.characterPageClassText}>
-              ({formatMulticlassLevels(basicInformation.classes)})
-            </Text>
-          )}
-
-          <Divider my="md" />
-
-          <Flex component={List} justify="space-between" listStyleType="none">
-            {Object.entries(basicInformation.modifiers).map(
-              ([abilityName, abilityModifier]) => (
-                <AbilityModifier
-                  key={abilityName}
-                  name={abilityName}
-                  value={abilityModifier}
-                />
-              )
-            )}
-          </Flex>
-
-          <Divider my="md" />
-
-          <Flex
-            justify="space-between"
-            className={classes.characterPageBasicTraits}
-          >
-            <TraitLabel
-              icon={<IconHeart />}
-              title="Total HP"
-              description={basicInformation.hp}
-            />
-            <TraitLabel
-              icon={<IconShield />}
-              title="Armor Class"
-              description={basicInformation.armorClass}
-            />
-          </Flex>
-        </section>
+        <BasicInformationPage />
 
         <Tabs
           defaultValue="skills"

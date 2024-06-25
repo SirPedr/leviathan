@@ -1,0 +1,14 @@
+.basicInformation-name {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.basicInformation-classText {
+  text-align: center;
+  color: var(--mantine-color-yellow-4);
+}
+
+.basicInformation-basicTraits {
+  margin-top: 24px;
+}
