@@ -7,6 +7,7 @@ import { BasicInformationPage } from "../../../basicInformation/pages/BasicInfor
 import { FeaturesPage } from "../../../features/pages/FeaturesPage/index.tsx";
 import { SkillsPage } from "../../../skills/pages/SkillsPage.tsx";
 import classes from "./index.module.css";
+import { InventoryPage } from "../../../inventory/pages/InventoryPage/index.tsx";
 
 export const CharacterPage = () => {
   const routerState = useRouterState();
@@ -35,6 +36,7 @@ export const CharacterPage = () => {
           <Tabs.List>
             <Tabs.Tab value="skills">Skills</Tabs.Tab>
             <Tabs.Tab value="features">Features</Tabs.Tab>
+            <Tabs.Tab value="inventory">Inventory</Tabs.Tab>
           </Tabs.List>
 
           <Tabs.Panel value="skills">
@@ -42,6 +44,9 @@ export const CharacterPage = () => {
           </Tabs.Panel>
           <Tabs.Panel value="features">
             <FeaturesPage sheet={sheet} />
+          </Tabs.Panel>
+          <Tabs.Panel value="inventory">
+            <InventoryPage sheet={sheet} />
           </Tabs.Panel>
         </Tabs>
       </main>

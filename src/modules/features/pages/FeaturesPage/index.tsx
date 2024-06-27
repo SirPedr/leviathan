@@ -17,9 +17,10 @@ export const FeaturesPage = ({ sheet }: Props) => {
     <CollapsibleGroup
       name={GROUP_FRIENDLY_NAMES[groupKey]}
       className={classes.featureGroup}
+      key={groupKey}
     >
       {features.map((feat, index) => (
-        <React.Fragment>
+        <React.Fragment key={feat.name}>
           <CollapsibleGroup.Item
             title={
               <Text>

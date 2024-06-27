@@ -16,8 +16,8 @@ interface Props {
 
 export const TraitLabel = createPolymorphicComponent<"div", Props>(
   forwardRef<HTMLDivElement, Props>(
-    ({ icon, title, description, ...otherProps }) => (
-      <Flex align="center" {...otherProps}>
+    ({ icon, title, description, ...otherProps }, ref) => (
+      <Flex align="center" {...otherProps} ref={ref}>
         {icon && (
           <ThemeIcon
             variant="filled"

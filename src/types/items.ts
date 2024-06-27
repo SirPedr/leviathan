@@ -17,12 +17,15 @@ export type ClassItem = CommonItem & {
     advancement: unknown[];
     spellcasting: unknown[];
     startingEquipment: unknown[];
+    quantity: number;
   };
 };
 
 export type FeatItem = CommonItem & {
   type: "feat";
   system: {
+    quantity: number;
+
     description: {
       value: string;
       chat: string;
@@ -64,4 +67,16 @@ export type FeatItem = CommonItem & {
   folder: string | null;
   sort: number;
   ownership: { default: number } & Record<string, number>;
+};
+
+export type GenericItem = CommonItem & {
+  type: string;
+  system: {
+    quantity: number;
+
+    description: {
+      value: string;
+      chat: string;
+    };
+  };
 };
