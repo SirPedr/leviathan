@@ -1,3 +1,5 @@
+import { RawSenses } from "./attributes";
+
 type CommonItem = {
   _id: string;
   name: string;
@@ -67,6 +69,17 @@ export type FeatItem = CommonItem & {
   folder: string | null;
   sort: number;
   ownership: { default: number } & Record<string, number>;
+};
+
+export type RaceItem = CommonItem & {
+  type: "race";
+  system: {
+    description: {
+      value: string;
+      chat: string;
+    };
+    senses: RawSenses;
+  };
 };
 
 export type GenericItem = CommonItem & {

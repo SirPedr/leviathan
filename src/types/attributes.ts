@@ -1,4 +1,4 @@
-export type HPAttribute = {
+export type RawHP = {
   value: number;
   max: number;
   temp: number;
@@ -7,4 +7,13 @@ export type HPAttribute = {
     level: string;
     overall: string;
   };
+};
+
+export type RawSenses = {
+  darkvision: number | null;
+  blindsight: number | null;
+  tremorsense: number | null;
+  truesight: number | null;
+  units: string;
+  special: string;
 };
