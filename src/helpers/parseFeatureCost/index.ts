@@ -1,8 +1,8 @@
-import { FeatItem } from "../../../../types/items";
+import { FeatItem } from "../../types/items";
 
 const specialCostTypes = ["special", "none"];
 
-export const parseFeatureCost = (
+export const parseActivationCost = (
   cost: FeatItem["system"]["activation"]
 ): string | null => {
   if (!cost.type || specialCostTypes.includes(cost.type)) {

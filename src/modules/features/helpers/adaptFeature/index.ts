@@ -2,7 +2,7 @@ import { FeatItem } from "../../../../types/items";
 import { CharacterBasicInfo } from "../../../basicInformation/types";
 import { CharacterFeatures } from "../../types";
 import { getFeatureID } from "../getFeatureID";
-import { parseFeatureCost } from "../parseFeatureCost";
+import { parseActivationCost } from "../../../../helpers/parseFeatureCost";
 import { cleanDirtyText } from "../../../../helpers/cleanDirtyText";
 import { parseFeatureRecovery } from "../parseFeatureRecovery";
 import { parseFeatureUses } from "../parseFeatureUses";
@@ -16,6 +16,6 @@ export const adaptFeature = (
   type: (feature.flags.plutonium ?? feature.flags.srd5e)?.page ?? "other",
   description: cleanDirtyText(feature.system.description.value),
   uses: parseFeatureUses(feature, character),
-  usageCost: parseFeatureCost(feature.system.activation),
+  usageCost: parseActivationCost(feature.system.activation),
   recoveryAt: parseFeatureRecovery(feature.system.uses),
 });

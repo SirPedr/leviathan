@@ -82,6 +82,36 @@ export type RaceItem = CommonItem & {
   };
 };
 
+export type SpellItem = CommonItem & {
+  type: "spell";
+  system: {
+    description: {
+      value: string;
+      chat: string;
+    };
+    activation: {
+      type: string;
+      cost: number;
+      condition: string;
+    };
+    preparation: {
+      mode: string;
+      prepared: boolean;
+    };
+    level: number;
+    target: {
+      value: number;
+      units: string;
+      type: string;
+    };
+    range: {
+      value: number;
+      long: null;
+      units: string;
+    };
+  };
+};
+
 export type GenericItem = CommonItem & {
   type: string;
   system: {

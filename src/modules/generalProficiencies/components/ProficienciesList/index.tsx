@@ -11,13 +11,7 @@ export const ProficienciesList = ({ title, items }: Props) => (
     <Divider mb="sm" />
     <Group>
       {items.map((item, index) => (
-        <Badge
-          key={index}
-          size="lg"
-          radius="xs"
-          c="black"
-          style={{ fontWeight: 900 }}
-        >
+        <Badge key={index} size="lg" radius="xs" c="black" fw="900">
           {item}
         </Badge>
       ))}

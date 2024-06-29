@@ -1,5 +1,5 @@
 import { RawHP, RawSenses } from "./attributes";
-import { ClassItem, FeatItem, GenericItem, RaceItem } from "./items";
+import { ClassItem, FeatItem, GenericItem, RaceItem, SpellItem } from "./items";
 import { RawAbilities } from "./rawAbilities";
 import { RawSkills } from "./rawSkills";
 import { RawTrait, RawTraitsKeys } from "./traits";
@@ -16,5 +16,5 @@ export type RawSheet = {
     currency: Record<"pp" | "gp" | "ep" | "sp" | "cp", number>;
     traits: Record<RawTraitsKeys, RawTrait>;
   };
-  items: Array<ClassItem | FeatItem | RaceItem | GenericItem>;
+  items: Array<ClassItem | FeatItem | RaceItem | SpellItem | GenericItem>;
 };

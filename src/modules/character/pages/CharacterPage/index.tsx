@@ -9,6 +9,7 @@ import { SkillsPage } from "../../../skills/pages/SkillsPage.tsx";
 import classes from "./index.module.css";
 import { InventoryPage } from "../../../inventory/pages/InventoryPage/index.tsx";
 import { GeneralProficienciesPage } from "../../../generalProficiencies/pages/GeneralProficienciesPage/index.tsx";
+import { SpellsPage } from "../../../spells/pages/SpellsPage/index.tsx";
 
 export const CharacterPage = () => {
   const routerState = useRouterState();
@@ -38,6 +39,7 @@ export const CharacterPage = () => {
             <Tabs.Tab value="skills">Skills</Tabs.Tab>
             <Tabs.Tab value="features">Features</Tabs.Tab>
             <Tabs.Tab value="inventory">Inventory</Tabs.Tab>
+            <Tabs.Tab value="spells">Spells</Tabs.Tab>
             <Tabs.Tab value="general">General</Tabs.Tab>
           </Tabs.List>
 
@@ -52,6 +54,9 @@ export const CharacterPage = () => {
           </Tabs.Panel>
           <Tabs.Panel value="general">
             <GeneralProficienciesPage sheet={sheet} />
+          </Tabs.Panel>
+          <Tabs.Panel value="spells">
+            <SpellsPage sheet={sheet} />
           </Tabs.Panel>
         </Tabs>
       </main>

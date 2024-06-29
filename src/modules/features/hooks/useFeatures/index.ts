@@ -21,7 +21,5 @@ export const useFeatures = (rawSheet: RawSheet): CharacterFeatureGroup => {
 
   const groupedFeatures = groupFeatures(feats);
 
-  console.log(groupedFeatures);
-
   return groupedFeatures;
 };
