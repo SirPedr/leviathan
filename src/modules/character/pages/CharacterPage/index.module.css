@@ -16,6 +16,8 @@
 }
 
 .characterPage-tabList {
+  overflow-x: auto;
+  flex-wrap: nowrap;
   margin-bottom: 12px;
 }
 
