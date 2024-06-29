@@ -116,7 +116,6 @@ export type GenericItem = CommonItem & {
   type: string;
   system: {
     quantity: number;
-
     description: {
       value: string;
       chat: string;

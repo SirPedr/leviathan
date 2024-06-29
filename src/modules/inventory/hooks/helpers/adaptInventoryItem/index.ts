@@ -1,9 +1,7 @@
 import { cleanDirtyText } from "../../../../../helpers/cleanDirtyText";
-import { ClassItem, FeatItem, GenericItem } from "../../../../../types/items";
+import { GenericItem } from "../../../../../types/items";
 
-export const adaptInventoryItem = (
-  item: ClassItem | FeatItem | GenericItem
-) => ({
+export const adaptInventoryItem = (item: GenericItem) => ({
   name: item.name,
   type: item.type,
   quantity: item.system.quantity,

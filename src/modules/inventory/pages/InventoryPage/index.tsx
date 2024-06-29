@@ -1,10 +1,10 @@
-import { Divider, Table, Text } from "@mantine/core";
+import { Table } from "@mantine/core";
+import { CollapsibleGroup } from "../../../../components/CollapsibleGroup";
+import { capitalize } from "../../../../helpers/capitalize";
 import { RawSheet } from "../../../../types/rawSheet";
 import { useCurrencies } from "../../hooks/useCurrencies";
-import { capitalize } from "../../../../helpers/capitalize";
-import classes from "./index.module.css";
 import { useInventory } from "../../hooks/useInventory";
-import { CollapsibleGroup } from "../../../../components/CollapsibleGroup";
+import classes from "./index.module.css";
 
 type Props = {
   sheet: RawSheet;

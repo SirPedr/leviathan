@@ -1,4 +1,5 @@
-import { Badge, Box, Flex, Group, Text } from "@mantine/core";
+import { Badge, Flex, Group, Text } from "@mantine/core";
+import { IconSunFilled } from "@tabler/icons-react";
 import { CollapsibleGroup } from "../../../../components/CollapsibleGroup";
 import { RawSheet } from "../../../../types/rawSheet";
 import {
@@ -7,7 +8,6 @@ import {
 } from "../../consts/spellDisplay.const";
 import { sortByDisplayPriority } from "../../helpers/orderByDisplayPriority";
 import { useSpells } from "../../hooks/useSpells";
-import { IconSunFilled } from "@tabler/icons-react";
 
 type Props = {
   sheet: RawSheet;
