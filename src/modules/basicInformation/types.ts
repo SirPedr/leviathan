@@ -5,7 +5,10 @@ export type CharacterClass = {
 
 export type CharacterBasicInfo = {
   name: string;
-  hp: number;
+  hp: {
+    current: number;
+    max: number;
+  };
   armorClass: number;
   totalLevel: number;
   proficiencyBonus: number;

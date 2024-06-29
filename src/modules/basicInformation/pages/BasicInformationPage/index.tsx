@@ -51,8 +51,8 @@ export const BasicInformationPage = () => {
       >
         <TraitLabel
           icon={<IconHeart />}
-          title="Total HP"
-          description={basicInformation.hp}
+          title="HP"
+          description={`${basicInformation.hp.current} / ${basicInformation.hp.max}`}
         />
         <TraitLabel
           icon={<IconShield />}

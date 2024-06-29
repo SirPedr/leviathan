@@ -13,7 +13,10 @@ export const useBasicCharacterInformation = (
 
   return {
     name: sheet.name,
-    hp: sheet.system.attributes.hp.max,
+    hp: {
+      max: sheet.system.attributes.hp.max,
+      current: sheet.system.attributes.hp.value,
+    },
     armorClass: 10,
     proficiencyBonus: calculateProficiencyBonus(totalLevel),
     totalLevel,
