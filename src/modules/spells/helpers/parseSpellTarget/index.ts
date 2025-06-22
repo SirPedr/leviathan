@@ -1,7 +1,9 @@
 import { removeRedundantSpaces } from "../../../../helpers/removeRedundantSpaces";
 import { SpellItem } from "../../../../types/items";
 
-export const parseSpellTarget = (target: SpellItem["system"]["target"]) =>
+export const parseSpellTarget = (
+  target: SpellItem["system"]["target"]["affects"]
+) =>
   removeRedundantSpaces(
-    `${target.value} ${target.units} ${target.type}`
+    `${(target.count ?? -1) > 0 ? target.count : ""} ${target.type ?? ""}`
   ).trim();

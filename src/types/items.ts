@@ -100,9 +100,15 @@ export type SpellItem = CommonItem & {
     };
     level: number;
     target: {
-      value: number;
-      units: string;
-      type: string;
+      affects: {
+        choice: boolean;
+        count?: number;
+        type?: string;
+      };
+      template: {
+        units: string;
+        contiguous: boolean;
+      };
     };
     range: {
       value: number;

@@ -9,5 +9,7 @@ export const parseActivationCost = (
     return null;
   }
 
-  return `${cost.cost ?? 1} ${cost.type === "bonus" ? "bonus action" : cost.type}`;
+  return `${cost.cost ?? 1} ${
+    cost.type === "bonus" ? "bonus action" : cost.type
+  }`;
 };

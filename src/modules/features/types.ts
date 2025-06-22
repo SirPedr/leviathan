@@ -8,7 +8,6 @@ export type CharacterFeatures = {
     max: number;
   } | null;
   recoveryAt: string | null;
-  usageCost: string | null;
 };
 
 export type CharacterFeatureGroup = Record<string, CharacterFeatures[]>;

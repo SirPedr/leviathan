@@ -1,11 +1,13 @@
 import { Badge, Flex, Group, Text } from "@mantine/core";
 import { IconSunFilled } from "@tabler/icons-react";
 import { CollapsibleGroup } from "../../../../components/CollapsibleGroup";
+import { removeDuplicates } from "../../../../helpers/removeDuplicates";
 import { RawSheet } from "../../../../types/rawSheet";
 import {
   SPELL_BADGES_KEYS,
   SPELL_GROUP_NAMES,
 } from "../../consts/spellDisplay.const";
+import { isRelevantSpellValue } from "../../helpers/isRelevantSpellValue";
 import { sortByDisplayPriority } from "../../helpers/orderByDisplayPriority";
 import { useSpells } from "../../hooks/useSpells";
 
@@ -37,19 +39,14 @@ export const SpellsPage = ({ sheet }: Props) => {
             key={`${groupID}-${index}`}
           >
             <Group mb="sm">
-              {SPELL_BADGES_KEYS.map((badgeKey) => {
-                const value = spell[badgeKey];
-                const valueAsNumber = Number(value);
-                const isRelevantValue = isNaN(valueAsNumber)
-                  ? Boolean(value)
-                  : valueAsNumber !== 0;
-
-                return isRelevantValue ? (
-                  <Badge c="black" radius="xs" fw="900" key={badgeKey}>
+              {SPELL_BADGES_KEYS.map((badgeKey) => spell[badgeKey])
+                .filter(isRelevantSpellValue)
+                .filter(removeDuplicates)
+                .map((value, index) => (
+                  <Badge c="black" radius="xs" fw="900" key={index}>
                     {value}
                   </Badge>
-                ) : null;
-              })}
+                ))}
             </Group>
 
             {spell.description}

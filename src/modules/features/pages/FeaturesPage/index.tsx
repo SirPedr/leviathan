@@ -25,7 +25,6 @@ export const FeaturesPage = ({ sheet }: Props) => {
             title={
               <Text>
                 {feat.name}{" "}
-                {feat.usageCost && <Pill ml="sm">{feat.usageCost}</Pill>}
                 {feat.uses && (
                   <Pill ml="sm">
                     {feat.uses.current}/{feat.uses.max}
