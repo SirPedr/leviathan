@@ -12,6 +12,6 @@ export const adaptSpell = (spell: SpellItem): Spell => ({
   prepared: spell.system.preparation.prepared,
   castingTime: parseActivationCost(spell.system.activation) ?? "",
   group: getSpellLevelGroup(spell),
-  target: parseSpellTarget(spell.system.target),
+  target: parseSpellTarget(spell.system.target.affects),
   range: parseSpellRange(spell.system.range),
 });
