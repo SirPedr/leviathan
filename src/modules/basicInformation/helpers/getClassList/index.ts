@@ -7,4 +7,5 @@ export const getClassList = (sheet: RawSheet) =>
     .map((chosenClass) => ({
       name: chosenClass.name,
       level: chosenClass.system.levels,
+      subclass: chosenClass.system.identifier || undefined,
     }));

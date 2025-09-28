@@ -1,6 +1,7 @@
 export type CharacterClass = {
   name: string;
   level: number;
+  subclass?: string;
 };
 
 export type CharacterBasicInfo = {
@@ -15,6 +16,7 @@ export type CharacterBasicInfo = {
   classes: Array<{
     name: string;
     level: number;
+    subclass?: string;
   }>;
   modifiers: Record<string, number>;
 };
